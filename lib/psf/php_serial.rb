@@ -53,7 +53,7 @@ module Psf
   end
 
   # Serializes a hash into PHP session.
-  # @param var [Hash]
+  # @param hash [Hash]
   # @return [String]
   def self.serialize_session(hash)
     serialized_session = ''
