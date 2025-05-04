@@ -55,6 +55,6 @@ social_links: # Appears in sidebar. Set the urls then uncomment and comment out 
   GitHub: https://github.com/noraj
 readme_index:
   remove_originals: true
-  with_frontmatter: false
+  with_frontmatter: true
 optional_front_matter:
   remove_originals: true
