@@ -1,0 +1,7 @@
+--output-dir output/yard
+--markup markdown
+--markup-provider commonmarker
+--plugin coderay
+-
+--main README.md
+LICENSE

@@ -1,0 +1,78 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'psf'
+require 'docopt'
+
+doc = <<~DOCOPT
+  php-serialized-formatter (psf) v#{Psf::VERSION}
+
+  Usage:
+    psf unserialize [--session] (--string <string> | --file <file> ) [--format <format>]
+    psf -h | --help
+    psf --version
+
+  Commands:
+    unserialize    Unserialize PHP serialized objects
+
+  Options:
+    --session                       Session mode [default: false]
+    -s <string>, --string <string>  Serialized content string, read from STDIN if equal to "-"
+    -f <file>, --file <file>        Serialized content file
+    --format <format>               Output format (hash, json, json_pretty, yaml) [default: hash]
+    --debug                         Display arguments
+    -h, --help                      Show this screen
+    --version                       Show version
+
+  Examples:
+    psf unserialize --session -f /var/lib/php/session/sess_3cebqoq314pcnc2jgqiu840h0k
+    psf unserialize -s 'O:6:"Person":2:{s:10:"first_name";s:4:"John";s:9:"last_name";s:3:"Doe";}' --format yaml
+
+  Project:
+    author (https://pwn.by/noraj / https://twitter.com/noraj_rawsec)
+    source (https://github.com/noraj/php-serialized-formatter)
+    documentation (https://noraj.github.io/php-serialized-formatter)
+DOCOPT
+
+begin
+  args = Docopt.docopt(doc, version: Psf::VERSION)
+  puts args if args['--debug']
+  # use case 1, using the tool
+  if args['unserialize']
+    # File or string ?
+    serialized_data = ''
+    if args['--string']
+      args['--string'] = $stdin.read.chomp if args['--string'] == '-'
+      serialized_data = args['--string']
+    elsif args['--file']
+      serialized_data = File.read(args['--file'])
+    end
+    # Session or regular object ?
+    unserialized_data = if args['--session']
+                          Psf.unserialize_session(serialized_data)
+                        else
+                          Psf.unserialize(serialized_data)
+                        end
+    # Format ?
+    case args['--format']
+    when 'hash'
+      require 'pp'
+      pp unserialized_data
+    when 'json'
+      require 'json'
+      puts unserialized_data.to_json
+    when 'json_pretty'
+      require 'json'
+      puts JSON.pretty_generate(unserialized_data)
+    when 'yaml'
+      require 'yaml'
+      puts unserialized_data.to_yaml
+    else
+      raise 'Unexisting format specified'
+    end
+  end
+  # use case 2, help: already handled by docopt
+  # use case 3, version: already handled by docopt
+rescue Docopt::Exit => e
+  puts e.message
+end

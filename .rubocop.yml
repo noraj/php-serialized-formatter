@@ -1,0 +1,26 @@
+inherit_mode:
+  merge:
+    - Exclude
+AllCops:
+  TargetRubyVersion: 3.1
+  NewCops: enable
+  Exclude:
+    - 'playground/*.rb'
+    - 'test/*.rb'
+Gemspec/AddRuntimeDependency:
+  Enabled: false # https://github.com/rubocop/rubocop/pull/13030#discussion_r1674791776
+Layout/HashAlignment:
+  Exclude:
+    - '*.gemspec'
+Layout/SpaceAroundOperators:
+  Exclude:
+    - '*.gemspec'
+Metrics/AbcSize:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/ModuleLength:
+  Enabled: false
+
