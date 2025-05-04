@@ -27,7 +27,9 @@ jobs:
           bundler-cache: true
       - name: Build YARD documentation
         id: build
-        run: bundle exec yard doc
+        run: |
+          mkdir -p output/yard/
+          bundle exec yard doc
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3 # https://github.com/actions/upload-pages-artifact
