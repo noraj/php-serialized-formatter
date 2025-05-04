@@ -20,8 +20,10 @@ jobs:
         with:
           bundler-cache: true
       - name: Build Jekyll documentation
-        id: build-jekyll
-        run: bundle exec jekyll build
+        id: build-jekyll # symlinks not allowed so copy readme
+        run: |
+          cp README.md docs/
+          bundle exec jekyll build
       - name: Build YARD documentation # must be after jekyll as jekyll wipe the destination folder before building
         id: build-yard
         run: bundle exec yard doc

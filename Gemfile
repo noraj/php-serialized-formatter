@@ -36,11 +36,14 @@ group :development, :docs do
   # gem 'yard', github: 'ParadoxV5/yard', ref: '9e869c940859570b07b81c5eadd6070e76f6291e', branch: 'commonmarker-1.0'
   # gem 'commonmarker', '~> 2.0' # for markdown support in YARD
 
+  gem 'alembic-jekyll-theme', '~> 4.1' # jekyll theme
   gem 'commonmarker', '~> 0.23' # for markdown support in YARD
   gem 'jekyll', '~> 4.4', '>= 4.4.1' # user documentation
-  gem 'jekyll-commonmark', '~> 1.4' # jekyll markdown plugin
-  gem 'jekyll-remote-theme', '~> 0.4.3' # jekyll theme plugin
-  gem 'jekyll-seo-tag', '~> 2.8' # jekyll seo plugin
+  gem 'jekyll-commonmark', '~> 1.3' # jekyll markdown plugin
+  gem 'jekyll-default-layout', '~> 0.1.5' # jekyll plugin that set default layout automatically
+  gem 'jekyll-optional-front-matter', '~> 0.3.2' # jekyll plugin so that YAML frontmatter are optionnals
+  gem 'jekyll-readme-index', '~> 0.3.0' # jekyll plugin so that README.md becomes the index
+  gem 'jekyll-seo-tag', '~> 2.6' # jekyll seo plugin
   gem 'webrick', '~> 1.9' # for yard server
   gem 'yard', ['>= 0.9.37', '< 0.10'] # library documentation
   gem 'yard-coderay', '~> 0.1' # for syntax highlight support in YARD

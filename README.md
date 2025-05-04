@@ -8,7 +8,7 @@
 ![GitHub Workflow Status (documentation)](https://img.shields.io/github/actions/workflow/status/noraj/php-serialized-formatter/documentation.yml?branch=master&label=documentation)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/noraj/php-serialized-formatter)
 
-![](https://noraj.github.io/php-serialized-formatter/docs/media/psf_logo.png)
+![](https://noraj.github.io/php-serialized-formatter/media/psf_logo.png)
 
 > PHP serialization library that can parse and generate PHP's serialization format including PHP sessions specific format. The CLI tool can unserialize PHP objects or sessions from a string or a file to a pretty hash, JSON (minified or pretty) or YAML.
 
@@ -18,7 +18,7 @@
 gem install php-serialized-formatter
 ```
 
-Check the [installation](https://noraj.github.io/php-serialized-formatter/docs/installation.html) page on the documentation to discover more methods.
+Check the [installation](https://noraj.github.io/php-serialized-formatter/installation.html) page on the documentation to discover more methods.
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/php-serialized-formatter.svg)](https://repology.org/project/php-serialized-formatter/versions)
 [![Gem Version](https://badge.fury.io/rb/php-serialized-formatter.svg)](https://badge.fury.io/rb/php-serialized-formatter)

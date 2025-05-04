@@ -1,11 +1,13 @@
 # GitHub Pages Jekyll config
 # https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
 # https://github.com/daviddarnes/alembic
-remote_theme: daviddarnes/alembic@main
+theme: alembic-jekyll-theme
 plugins:
-  - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-commonmark
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-default-layout
 
 # https://github.com/daviddarnes/alembic/blob/main/_config.yml
 twitter:
@@ -29,6 +31,8 @@ url: https://noraj.github.io/
 baseurl: "/php-serialized-formatter/"
 source: docs/
 destination: output/
+include:
+  - README.md
 repo: https://github.com/noraj/php-serialized-formatter
 navigation_header:
 - title: Home
@@ -49,3 +53,8 @@ navigation_footer:
 social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
   X: https://x.com/noraj_rawsec
   GitHub: https://github.com/noraj
+readme_index:
+  remove_originals: true
+  with_frontmatter: false
+optional_front_matter:
+  remove_originals: true

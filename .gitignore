@@ -3,5 +3,9 @@ playground/
 # Documentation
 output/
 .yardoc/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+_site/
 # Gems
 *.gem
