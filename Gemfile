@@ -12,6 +12,7 @@ end
 
 # Needed for the CLI & library
 group :runtime, :all do
+  # no external dependency yet
 end
 
 # Needed to install dependencies
