@@ -15,19 +15,19 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@v4 # https://github.com/actions/checkout
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Build Jekyll documentation
-        uses: actions/jekyll-build-pages@v1 # https://github.com/actions/jekyll-build-pages
-        with:
-          destination: output/
       - name: Ruby setup
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
       - name: Build YARD documentation
         id: build
-        run: bundle exec yard doc --output-dir /github/workspace/output/yard/
+        run: bundle exec yard doc
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Build Jekyll documentation
+        uses: actions/jekyll-build-pages@v1 # https://github.com/actions/jekyll-build-pages
+        with:
+          destination: output/
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3 # https://github.com/actions/upload-pages-artifact
