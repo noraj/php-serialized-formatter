@@ -30,4 +30,6 @@ Gem::Specification.new do |s|
   }
 
   s.required_ruby_version = ['>= 3.1.0', '< 4.0']
+
+  s.add_runtime_dependency('docopt', '~> 0.6') # for argument parsing
 end
