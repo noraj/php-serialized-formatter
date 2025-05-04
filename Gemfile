@@ -37,7 +37,11 @@ group :development, :docs do
   # gem 'commonmarker', '~> 2.0' # for markdown support in YARD
 
   gem 'commonmarker', '~> 0.23' # for markdown support in YARD
+  gem 'jekyll', '~> 4.4', '>= 4.4.1' # user documentation
+  gem 'jekyll-commonmark', '~> 1.4' # jekyll markdown plugin
+  gem 'jekyll-remote-theme', '~> 0.4.3' # jekyll theme plugin
+  gem 'jekyll-seo-tag', '~> 2.8' # jekyll seo plugin
   gem 'webrick', '~> 1.9' # for yard server
-  gem 'yard', ['>= 0.9.37', '< 0.10']
+  gem 'yard', ['>= 0.9.37', '< 0.10'] # library documentation
   gem 'yard-coderay', '~> 0.1' # for syntax highlight support in YARD
 end
