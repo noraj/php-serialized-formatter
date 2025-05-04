@@ -20,7 +20,7 @@ jobs:
       - name: Build Jekyll documentation
         uses: actions/jekyll-build-pages@v1 # https://github.com/actions/jekyll-build-pages
         with:
-        destination: output/
+          destination: output/
       - name: Ruby setup
         uses: ruby/setup-ruby@v1
         with:
