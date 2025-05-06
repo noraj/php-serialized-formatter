@@ -10,16 +10,6 @@ gem install php-serialized-formatter
 
 Gem: [php-serialized-formatter](https://rubygems.org/gems/php-serialized-formatter)
 
-### BlackArch
-
-From the repository:
-
-```bash
-pacman -S php-serialized-formatter
-```
-
-PKGBUILD: [php-serialized-formatter](https://github.com/BlackArch/blackarch/blob/master/packages/php-serialized-formatter/PKGBUILD)
-
 ### **ArchLinux**
 
 Manually:
