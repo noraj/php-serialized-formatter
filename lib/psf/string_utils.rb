@@ -13,7 +13,7 @@ class String
     byte_length = bytesize - byte_start_index if byte_start_index + byte_length > bytesize
 
     out = byteslice(byte_start_index, byte_length)
-    replace(byteslice(0, byte_start_index) + byteslice(byte_start_index + byte_length..-1))
+    replace(byteslice(0, byte_start_index) + byteslice((byte_start_index + byte_length)..-1))
     out
   end
 end

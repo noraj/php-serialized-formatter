@@ -118,7 +118,7 @@ module Psf
       end
       extract_until!(data, '}')
       # if keys are sequential numbers, return array
-      value = value.values if (Array(0..value.length - 1) == value.keys) && !value.empty?
+      value = value.values if (Array(0..(value.length - 1)) == value.keys) && !value.empty?
     when 'O'
       value = {}
       length = extract_until!(data, ':').to_i
