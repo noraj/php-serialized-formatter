@@ -2,5 +2,5 @@
 
 module Psf
   # Version of php-serialized-formatter library and app
-  VERSION = '0.0.1'
+  VERSION = '0.0.2'
 end

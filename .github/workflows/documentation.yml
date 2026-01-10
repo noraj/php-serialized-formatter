@@ -23,7 +23,8 @@ jobs:
         id: build-jekyll # symlinks not allowed so copy readme
         run: |
           cp README.md docs/
-          bundle exec jekyll build
+          bundle install --gemfile=Gemfile.jekyll
+          bundle exec --gemfile=Gemfile.jekyll jekyll build
       - name: Build YARD documentation # must be after jekyll as jekyll wipe the destination folder before building
         id: build-yard
         run: bundle exec yard doc
