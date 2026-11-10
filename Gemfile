@@ -22,7 +22,7 @@ end
 
 # Needed to run tests
 group :development, :test do
-  gem 'minitest', '~> 6.0'
+  gem 'minitest', '~> 6.1'
   gem 'rake', '~> 13.3'
 end
 
