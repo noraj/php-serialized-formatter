@@ -18,9 +18,9 @@ GEM
     language_server-protocol (3.17.0.6)
     lint_roller (1.1.0)
     logger (1.7.0)
-    minitest (6.0.6)
+    minitest (6.1.0)
       drb (~> 2.0)
-      prism (~> 1.5)
+      prism (>= 1.5, < 3)
     ostruct (0.6.3)
     parallel (2.3.0)
     parser (3.3.13.0)
@@ -78,7 +78,7 @@ DEPENDENCIES
   docopt (~> 0.6)
   irb
   logger
-  minitest (~> 6.0)
+  minitest (~> 6.1)
   ostruct
   rake (~> 13.3)
   rubocop (~> 1.92)
